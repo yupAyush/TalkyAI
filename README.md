@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#🎙️ TalkyAi
 
-## Getting Started
+## TalkyAi is an AI-powered interview simulation and feedback platform built with **Next.js**, **Vapi**, **Gemini**, **MongoDB**, and **Clerk** for authentication. It enables users to conduct mock interviews, receive structured feedback, and improve communication skills through voice and text.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Layer        | Tools Used                      |
+|--------------|----------------------------------|
+| Frontend     | Next.js, TailwindCSS             |
+| Backend      | Node.js, MongoDB, Vapi SDK       |
+| AI Engine    | Gemini (Google AI)               |
+| Auth         | Clerk                            |
+| Database     | MongoDB Atlas                    |
+| Voice Flow   | Vapi SDK                         |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# How it looks
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 🔐 API Keys
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Make sure to add your API keys in a `.env.local` file:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
+CLERK_SECRET_KEY=""
+GOOGLE_GENERATIVE_AI_API_KEY=""
+NEXT_PUBLIC_VAPI_API_KEY=""
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
