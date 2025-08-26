@@ -12,7 +12,8 @@ const schema= new mongoose.Schema({
     createdAt:String,
     amount:Number,
     Finalized:{type:boolean,default:false},
-    feedback:{type:String,default:""}
+    feedback:{type:String,default:""} 
+    // coommit
 
    
 
