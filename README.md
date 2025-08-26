@@ -1,6 +1,6 @@
-#🎙️ TalkyAi
+#  TalkyAi
 
-## TalkyAi is an AI-powered interview simulation and feedback platform built with **Next.js**, **Vapi**, **Gemini**, **MongoDB**, and **Clerk** for authentication. It enables users to conduct mock interviews, receive structured feedback, and improve communication skills through voice and text.
+TalkyAi is an AI-powered interview simulation and feedback platform built with **Next.js**, **Vapi**, **Gemini**, **MongoDB**, and **Clerk** for authentication. It enables users to conduct mock interviews, receive structured feedback, and improve communication skills through voice and text.
 
 ---
 
