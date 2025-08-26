@@ -18,7 +18,7 @@ TalkyAi is an AI-powered interview simulation and feedback platform built with *
 ---
 
 # How it looks
-![Main page](examplelmages\mainpage.png)
+![Main page](exampleImages/generation.png)
 ---
 ![interview](examplelmages\interview.png)
 ---
