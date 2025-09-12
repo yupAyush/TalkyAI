@@ -24,6 +24,7 @@ function inter() {
       const [isSpeaking, setisSpeaking] = useState(false);
       const [callstat, setcallstat] = useState<callstatus>(callstatus.INACTIVE);
       const [data, setdata] = useState<any>();
+      const [transcription, setTranscription] = useState<string>("");
       const searchParams= useSearchParams()
       const id = searchParams.get("id")
       const buttonRef = useRef<HTMLButtonElement>(null);
@@ -54,33 +55,35 @@ function inter() {
        
       }, []);
 
-        const buttonhandler =()=>{
+        const buttonhandler = () => {
           try {
-            // setcallstat(callstatus.ACTIVE)
-            const assistantOptions=vapifunction(data?.username,data?.role,data?.level,data?.questions)
-            console.log(assistantOptions)
-            vapi.start(assistantOptions)
-            console.log("started")
-            vapi.on("speech-start",()=>{
-              setisSpeaking(true)
-            })
-            vapi.on("speech-end",()=>{
-              setisSpeaking(false)
-            })
-            vapi.on("call-start",()=>{
-              console.log("call started")
-            })
-            vapi.on("call-end",()=>{
-              
-              redirect("/feedback")
-              setcallstat(callstatus.END)
-            })
+            const assistantOptions = vapifunction(data?.username, data?.role, data?.level, data?.questions);
+            console.log(assistantOptions);
+            vapi.start(assistantOptions);
+            console.log("started");
+            vapi.on("speech-start", () => {
+              setisSpeaking(true);
+            });
+            vapi.on("speech-end", () => {
+              setisSpeaking(false);
+            });
+            vapi.on("call-start", () => {
+              console.log("call started");
+            });
+            vapi.on("call-end", () => {
+              redirect("/feedback");
+              setcallstat(callstatus.END);
+            });
+            vapi.on('message', (message) => {
+              if (message.type === 'transcript') {
+                console.log(`${message.role}: ${message.transcript}`);
+                setTranscription(message.transcript);
+              }
+           });
 
-        
-            
+          
           } catch (error) {
             console.error("Error starting Vapi conversation:", error);
-            
           }
        
       }
@@ -121,7 +124,11 @@ function inter() {
                 : "...."}
               </span>
             </button>) :<button ref={buttonRef} className='rounded bg-red-500 w-[300px] h-12 mt-11 text-lg p-2 font-mono text-white hover:bg-red-700' onClick={vstop}>End</button>}
-            
+            {transcription && (
+      <div className="mt-4 p-2 bg-gray-800 text-white rounded w-[500px]">
+        <strong>Live Transcription:</strong> {transcription}
+      </div>
+    )}
             
         </div>
    )
