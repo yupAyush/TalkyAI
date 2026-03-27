@@ -19,7 +19,7 @@ export async function POST(request:Request) {
     const clerkUser:null|any=await  currentUser()
     try {
         const {text} = await generateText({
-            model:google("gemini-2.0-flash-001",),
+            model:google("gemini-3.1-flash-lite-preview",),
             prompt:`Prepare questions for a job interview.
                     The job role is ${role}.
                     The job experience level is ${level}.

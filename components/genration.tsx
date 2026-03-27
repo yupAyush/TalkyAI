@@ -31,7 +31,7 @@ function main() {
               params:{username},
             })
             setpeople(res.data)
-            console.log(res.data)
+            console.log(res.data) 
             if (res.data.length > 0) {
               setinterIndi(true)
             } else {
